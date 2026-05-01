@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Projeto Da Faculdade </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo"> HabHub </h1>
+            <ul class="nav-links">
+                <li><a href="#home"> Inicio </a></li>
+                <li><a href="#sobre"> Sobre </a></li>
+                <li><a href="#contato"> Contato </a></li>
+            </ul>
+            <button class="btn" onclick="toggleTheme()" > Modo Escuro </button>
+        </nav>
+    </header>
+    
+    <main id="home" class="container">
+        <section class="hero">
+            <h2> Bem vindo a minha página!</h2>
+            <P>Uma estrutura simples e rápida. </P>
+            <button class="btn bnt-primary" id="action-btn"> Clique aqui</button>
+        </section>
+
+        <section id="sobre" style="background-color: red;" class="hero">
+            <h2> Pilares de Saúde </h2>
+            <P>Uma estrutura simples e rápida. </P>
+            <div class="carousel-sla">
+                <div class="carousel">
+                    <div class="card">
+                        <h3>alimentação</h3>
+                        <p>coma frutas</p>
+                    </div>
+                    <div class="card">
+                        <h3>Hidratação</h3>
+                        <p>beba água</p>
+                    </div>
+                    <div class="card">
+                        <h3>Movimento</h3>
+                        <p>Se movimente</p>
+                    </div>
+                    <div class="card">
+                        <h3>sono</h3>
+                        <p>Durma</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" style="background-color: blue;" class="hero">
+            <h2> Bem vindo a minha página!</h2>
+            <P>Uma estrutura simples e rápida. </P>
+            <button class="btn bnt-primary" id="action-btn"> Clique aqui</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Meu projeto. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="ibelive.js"></script>
+</body>
+</html>
