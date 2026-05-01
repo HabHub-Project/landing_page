@@ -1,13 +1,148 @@
-:root{
+:root {
     --bg-color: #e0f8e8;
     --text-color: #2d3748;
     --primary-color: #38a169;
     --nav-bg: #ffffff;
 }
 
-[data-theme="black"]{
+[data-theme="black"] {
     --bg-color: #1a1a1a;
     --text-color: #f4f4f9;
     --primary-color: #4da3ff;
     --nav-bg: #2a2a2a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding-top: 86px;
+    padding-bottom: 72px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 70px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.logo-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo {
+    margin: 0;
+    font-family: "Satisfy", cursive;
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+    margin-left: auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.theme-btn {
+    border: 0;
+    border-radius: 6px;
+    padding: 10px 14px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: var(--nav-bg);
+    color: var(--text-color);
+    text-align: center;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding-top: 132px;
+        padding-bottom: 86px;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .nav-actions {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 14px;
+    }
+
+    .theme-btn {
+        padding: 8px 10px;
+    }
+
 }
