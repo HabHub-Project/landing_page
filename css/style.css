@@ -226,12 +226,13 @@ main {
 
 .pillars-track {
     display: flex;
+    gap: 24px;
     transition: transform 0.35s ease;
 }
 
 .pillar-card {
     display: flex;
-    flex: 0 0 calc(33.333% - 12px);
+    flex: 0 0 33.333%;
     aspect-ratio: 1 / 1;
     padding: 24px;
     flex-direction: column;
@@ -912,11 +913,15 @@ footer p {
         padding: 0 16px;
     }
 
+    .pillars-track {
+        gap: 16px;
+    }
+
     .pillar-card {
         aspect-ratio: auto;
         min-height: auto;
         padding: 28px 16px;
-        flex: 0 0 calc(100% - 12px);
+        flex: 0 0 100%;
     }
 
     .pillar-icon img {
