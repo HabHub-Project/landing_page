@@ -168,7 +168,7 @@ main {
     color: var(--bg-light);
     position: relative;
     z-index: 1;
-    max-width: 520px;
+    max-width: 1000px /*520px*/;
     margin-left: clamp(32px, 8vw, 120px);
 }
 
@@ -519,7 +519,7 @@ main {
 
 .section-header-divider h2 {
     font-size: clamp(2rem, 4vw, 3rem);
-    color: var(--logo-color);
+    color: var(--text-dark);
     font-weight: 800;
     margin-bottom: 15px;
     position: relative;
