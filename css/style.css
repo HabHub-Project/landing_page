@@ -229,7 +229,7 @@ main {
 .pillar-card {
     display: flex;
     flex: 0 0 calc(33.333% - 12px);
-    min-height: 280px;
+    aspect-ratio: 1 / 1;
     padding: 36px;
     flex-direction: column;
     align-items: center;
@@ -907,6 +907,7 @@ footer p {
     }
 
     .pillar-card {
+        aspect-ratio: auto;
         min-height: 250px;
         padding: 28px 22px;
         flex: 0 0 100%;
