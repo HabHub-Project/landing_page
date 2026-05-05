@@ -518,6 +518,9 @@ main {
 .presentation-area {
     margin-bottom: 50px;
     max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 24px;
 }
 
 .presentation-header {
@@ -527,7 +530,7 @@ main {
 
 .presenter-header {
     margin-bottom: 50px;
-    text-align: left;
+    text-align: center;
 }
 
 .brown {
@@ -569,6 +572,8 @@ main {
     padding-left: 20px;
     border-left: 2px solid var(--secondary-color);
     max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .manifesto-line {
