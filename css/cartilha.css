@@ -194,14 +194,14 @@ header {
     flex-shrink: 0;
 }
 
-.priorities-section{
+.priorities-section {
     margin-top: 140px;
     margin-bottom: 60px;
     padding: 0 20px;
     text-align: center;
 }
 
-.upper-detail{
+.upper-detail {
     display: block;
     font-size: 0.8rem;
     text-transform: uppercase;
@@ -211,7 +211,7 @@ header {
     font-weight: 700;
 }
 
-.section-header-divider h2{
+.section-header-divider h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     color: var(--logo-color);
     font-weight: 800;
@@ -220,7 +220,7 @@ header {
     display: inline-block;
 }
 
-.section-header-divider p{
+.section-header-divider p {
     font-size: 1.1rem;
     color: var(--text-light);
     max-width: 600px;
@@ -283,9 +283,17 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.card.high { border-top-color: var(--high-impact); }
-.card.med { border-top-color: var(--med-impact); }
-.card.low { border-top-color: var(--low-impact); }
+.card.high {
+    border-top-color: var(--high-impact);
+}
+
+.card.med {
+    border-top-color: var(--med-impact);
+}
+
+.card.low {
+    border-top-color: var(--low-impact);
+}
 
 .badge {
     display: inline-block;

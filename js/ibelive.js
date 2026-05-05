@@ -48,39 +48,62 @@ const previousPillarBtn = document.querySelector('.carousel-btn-prev');
 const nextPillarBtn = document.querySelector('.carousel-btn-next');
 
 if (pillarsTrack && pillarCards.length > 0) {
-    let activePillar = 0;
+    let activePage = 0;
+    let itemsPerPage = 3;
+
+    function getItemsPerPage() {
+        return window.innerWidth <= 700 ? 1 : 3;
+    }
+
+    function updateItemsPerPage() {
+        itemsPerPage = getItemsPerPage();
+    }
+
+    function getTotalPages() {
+        return Math.ceil(pillarCards.length / itemsPerPage);
+    }
 
     function updatePillarsCarousel() {
-        pillarsTrack.style.transform = `translateX(-${activePillar * 100}%)`;
+        const percentage = (activePage * 100) / itemsPerPage;
+        pillarsTrack.style.transform = `translateX(-${percentage}%)`;
 
+        const totalPages = getTotalPages();
         carouselDots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === activePillar);
-            dot.setAttribute('aria-current', index === activePillar ? 'true' : 'false');
+            dot.classList.toggle('active', index === activePage);
+            dot.setAttribute('aria-current', index === activePage ? 'true' : 'false');
         });
     }
 
-    function showPillar(index) {
-        activePillar = (index + pillarCards.length) % pillarCards.length;
+    function showPage(index) {
+        const totalPages = getTotalPages();
+        activePage = (index + totalPages) % totalPages;
         updatePillarsCarousel();
     }
 
     if (previousPillarBtn) {
         previousPillarBtn.addEventListener('click', () => {
-            showPillar(activePillar - 1);
+            showPage(activePage - 1);
         });
     }
 
     if (nextPillarBtn) {
         nextPillarBtn.addEventListener('click', () => {
-            showPillar(activePillar + 1);
+            showPage(activePage + 1);
         });
     }
 
     carouselDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
-            showPillar(index);
+            showPage(index);
         });
     });
 
+    window.addEventListener('resize', () => {
+        updateItemsPerPage();
+        activePage = 0;
+        updatePillarsCarousel();
+    });
+
+    updateItemsPerPage();
     updatePillarsCarousel();
 }
