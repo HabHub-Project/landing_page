@@ -50,6 +50,7 @@ const nextPillarBtn = document.querySelector('.carousel-btn-next');
 if (pillarsTrack && pillarCards.length > 0) {
     let activePage = 0;
     let itemsPerPage = 3;
+    let autoPlayInterval = null;
 
     function getItemsPerPage() {
         return window.innerWidth <= 700 ? 1 : 3;
@@ -61,11 +62,6 @@ if (pillarsTrack && pillarCards.length > 0) {
 
     function getTotalPages() {
         return Math.ceil(pillarCards.length / itemsPerPage);
-    }
-
-    function getNormalizedPage(index) {
-        const totalPages = getTotalPages();
-        return ((index % totalPages) + totalPages) % totalPages;
     }
 
     function updatePillarsCarousel() {
@@ -80,38 +76,80 @@ if (pillarsTrack && pillarCards.length > 0) {
     }
 
     function showPage(index) {
-        activePage = getNormalizedPage(index);
+        const totalPages = getTotalPages();
+        activePage = index % totalPages;
         updatePillarsCarousel();
     }
 
     function nextPage() {
-        showPage(activePage + 1);
+        const totalPages = getTotalPages();
+        const nextIndex = activePage + 1;
+
+        if (nextIndex >= totalPages) {
+            activePage = 0;
+        } else {
+            activePage = nextIndex;
+        }
+        updatePillarsCarousel();
     }
 
     function prevPage() {
-        showPage(activePage - 1);
+        if (activePage === 0) {
+            activePage = getTotalPages() - 1;
+        } else {
+            activePage -= 1;
+        }
+        updatePillarsCarousel();
+    }
+
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(nextPage, 5000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
     }
 
     if (previousPillarBtn) {
-        previousPillarBtn.addEventListener('click', prevPage);
+        previousPillarBtn.addEventListener('click', () => {
+            prevPage();
+            resetAutoPlay();
+        });
     }
 
     if (nextPillarBtn) {
-        nextPillarBtn.addEventListener('click', nextPage);
+        nextPillarBtn.addEventListener('click', () => {
+            nextPage();
+            resetAutoPlay();
+        });
     }
 
     carouselDots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showPage(index);
+            resetAutoPlay();
         });
     });
+
+    pillarsTrack.addEventListener('mouseenter', stopAutoPlay);
+    pillarsTrack.addEventListener('mouseleave', startAutoPlay);
 
     window.addEventListener('resize', () => {
         updateItemsPerPage();
         activePage = 0;
         updatePillarsCarousel();
+        resetAutoPlay();
     });
 
     updateItemsPerPage();
     updatePillarsCarousel();
+    startAutoPlay();
 }
