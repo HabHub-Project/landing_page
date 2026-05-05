@@ -681,7 +681,7 @@ footer p {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-320px * 5 - 24px * 5));
+        transform: translateX(calc(-320px * 5 - 24px * 4));
     }
 }
 
