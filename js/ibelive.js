@@ -63,6 +63,11 @@ if (pillarsTrack && pillarCards.length > 0) {
         return Math.ceil(pillarCards.length / itemsPerPage);
     }
 
+    function getNormalizedPage(index) {
+        const totalPages = getTotalPages();
+        return ((index % totalPages) + totalPages) % totalPages;
+    }
+
     function updatePillarsCarousel() {
         const percentage = (activePage * 100) / itemsPerPage;
         pillarsTrack.style.transform = `translateX(-${percentage}%)`;
@@ -75,21 +80,24 @@ if (pillarsTrack && pillarCards.length > 0) {
     }
 
     function showPage(index) {
-        const totalPages = getTotalPages();
-        activePage = (index + totalPages) % totalPages;
+        activePage = getNormalizedPage(index);
         updatePillarsCarousel();
     }
 
+    function nextPage() {
+        showPage(activePage + 1);
+    }
+
+    function prevPage() {
+        showPage(activePage - 1);
+    }
+
     if (previousPillarBtn) {
-        previousPillarBtn.addEventListener('click', () => {
-            showPage(activePage - 1);
-        });
+        previousPillarBtn.addEventListener('click', prevPage);
     }
 
     if (nextPillarBtn) {
-        nextPillarBtn.addEventListener('click', () => {
-            showPage(activePage + 1);
-        });
+        nextPillarBtn.addEventListener('click', nextPage);
     }
 
     carouselDots.forEach((dot, index) => {
