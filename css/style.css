@@ -185,15 +185,16 @@ main {
 }
 
 .pillars {
-    padding: 72px 24px;
-    background-color: var(--bg-gray);
-    overflow: hidden;
+    padding: 0;
+    background-color: transparent;
+    overflow: visible;
 }
 
 .section-header {
     max-width: 720px;
     margin: 0 auto 36px;
     text-align: center;
+    padding: 72px 24px 0;
 }
 
 .section-header h2 {
@@ -205,110 +206,6 @@ main {
 .section-header p {
     color: var(--text-light);
     font-size: 1.1rem;
-}
-
-.pillars-carousel {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 24px;
-}
-
-.pillars-viewport {
-    flex: 1;
-    overflow: hidden;
-    border-radius: 18px;
-    width: 100%;
-}
-
-.pillars-track {
-    display: flex;
-    gap: 24px;
-    transition: transform 0.35s ease;
-}
-
-.pillar-card {
-    display: flex;
-    flex: 0 0 33.333%;
-    aspect-ratio: 1 / 1;
-    padding: 24px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background-color: var(--bg-light);
-    border: 1px solid rgba(131, 246, 185, 0.35);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
-    text-align: center;
-}
-
-.pillar-icon {
-    font-size: 3rem;
-    line-height: 1;
-}
-
-.pillar-icon img {
-    height: clamp(3rem, 8vw, 4.5rem);
-}
-
-.pillar-card h3 {
-    color: var(--text-dark);
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    margin: 0;
-}
-
-.pillar-card p {
-    color: var(--text-light);
-    font-size: clamp(0.75rem, 2vw, 0.9rem);
-    line-height: 1.3;
-    margin: 0;
-}
-
-.carousel-btn {
-    display: grid;
-    place-items: center;
-    flex: 0 0 44px;
-    width: 44px;
-    height: 44px;
-    border: 0;
-    border-radius: 50%;
-    background-color: var(--primary-color);
-    color: #1a3124;
-    cursor: pointer;
-    font-size: 2rem;
-    line-height: 1;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.carousel-btn:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 22px;
-}
-
-.carousel-dot {
-    width: 10px;
-    height: 10px;
-    border: 0;
-    border-radius: 50%;
-    background-color: rgba(131, 246, 185, 0.45);
-    cursor: pointer;
-}
-
-.carousel-dot.active {
-    width: 28px;
-    border-radius: 999px;
-    background-color: var(--primary-color);
 }
 
 .sustainability {
@@ -779,6 +676,15 @@ footer p {
     margin: 0;
 }
 
+@keyframes infiniteCarouselScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-20%);
+    }
+}
+
 @keyframes scrollMove {
     0% {
         transform: translateY(0);
@@ -788,6 +694,32 @@ footer p {
         transform: translateY(15px);
         opacity: 0;
     }
+}
+
+.infinite-carousel {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--bg-gray);
+    padding: 72px 0;
+}
+
+.infinite-carousel-track {
+    display: flex;
+    gap: 24px;
+    padding: 0 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: infiniteCarouselScroll 40s linear infinite;
+    width: fit-content;
+}
+
+.infinite-carousel-track:hover {
+    animation-play-state: paused;
+}
+
+.infinite-carousel .pillar-card {
+    flex: 0 0 clamp(250px, 20vw, 320px);
+    aspect-ratio: 1 / 1;
 }
 
 @media (max-width: 700px) {
@@ -905,33 +837,11 @@ footer p {
     }
 
     .pillars {
-        padding: 56px 16px;
+        padding: 0;
     }
 
-    .pillars-carousel {
-        gap: 12px;
-        padding: 0 16px;
-    }
-
-    .pillars-track {
-        gap: 16px;
-    }
-
-    .pillar-card {
-        aspect-ratio: auto;
-        min-height: auto;
-        padding: 28px 16px;
-        flex: 0 0 100%;
-    }
-
-    .pillar-icon img {
-        height: clamp(2.5rem, 6vw, 3.5rem);
-    }
-
-    .carousel-btn {
-        flex-basis: 36px;
-        width: 36px;
-        height: 36px;
+    .section-header {
+        padding: 48px 16px 0;
     }
 
     .carousel-btn {
@@ -956,6 +866,28 @@ footer p {
 
     .grid {
         grid-template-columns: 1fr;
+    }
+
+    .infinite-carousel {
+        padding: 48px 0;
+    }
+
+    .infinite-carousel-track {
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .infinite-carousel .pillar-card {
+        flex: 0 0 clamp(180px, 85vw, 280px);
+    }
+
+    @keyframes infiniteCarouselScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-25%);
+        }
     }
 
 }
