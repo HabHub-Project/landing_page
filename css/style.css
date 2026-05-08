@@ -18,7 +18,7 @@
     --low-impact: #4ecdc4;
 }
 
-[data-theme="black"] {
+/* [data-theme="black"] {
     --logo-color: #006600;
     --primary-color: #83f6b9;
     --primary-dark: #68c494;
@@ -30,7 +30,7 @@
     --text-light: #b4f9d5;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
     --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55);
-}
+} */
 
 * {
     margin: 0;
