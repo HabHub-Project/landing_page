@@ -18,20 +18,6 @@
     --low-impact: #4ecdc4;
 }
 
-/* [data-theme="black"] {
-    --logo-color: #006600;
-    --primary-color: #83f6b9;
-    --primary-dark: #68c494;
-    --secondary-color: #4e936f;
-    --danger-color: #346249;
-    --bg-light: #000000;
-    --bg-gray: #1a3124;
-    --text-dark: #e6fdf1;
-    --text-light: #b4f9d5;
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.42);
-    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.55);
-} */
-
 * {
     margin: 0;
     padding: 0;

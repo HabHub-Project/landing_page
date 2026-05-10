@@ -73,11 +73,6 @@ if (actionBtn) {
     })
 }
 
-// function toggleTheme(){
-//     document.documentElement.dataset.theme =
-//         document.documentElement.dataset.theme === 'black' ? '' : 'black';
-// }
-
 const navToggle = document.querySelector('.nav-toggle');
 const navActions = document.querySelector('.nav-actions');
 const navLinks = document.querySelectorAll('.nav-links a');
