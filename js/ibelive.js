@@ -1,4 +1,3 @@
-// Carousel functionality
 const carouselTrack = document.getElementById('carouselTrack');
 const carouselCards = document.querySelectorAll('.carousel-card');
 const prevBtn = document.querySelector('.carousel-nav-prev');
@@ -22,7 +21,7 @@ if (carouselTrack && carouselCards.length > 0) {
 
     function getGap() {
         const style = window.getComputedStyle(carouselTrack);
-        return parseFloat(style.gap) || 24;
+        return parseFloat(style.columnGap) || parseFloat(style.gap) || 24;
     }
 
     function updateCarouselPosition() {
@@ -36,15 +35,20 @@ if (carouselTrack && carouselCards.length > 0) {
         const maxIndex = carouselCards.length - cardsPerView;
         if (currentIndex < maxIndex) {
             currentIndex++;
-            updateCarouselPosition();
+        } else {
+            currentIndex = 0;
         }
+        updateCarouselPosition();
     }
 
     function movePrev() {
+        const maxIndex = carouselCards.length - cardsPerView;
         if (currentIndex > 0) {
             currentIndex--;
-            updateCarouselPosition();
+        } else {
+            currentIndex = maxIndex;
         }
+        updateCarouselPosition();
     }
 
     if (nextBtn) {
@@ -60,10 +64,10 @@ if (carouselTrack && carouselCards.length > 0) {
         currentIndex = 0;
         updateCarouselPosition();
     });
-
     updateCardsPerView();
     updateCarouselPosition();
 }
+
 
 const actionBtn = document.getElementById('action-btn');
 
@@ -103,3 +107,23 @@ if (navToggle && navActions) {
     });
 }
 
+const betaForm = document.querySelector('.beta-form');
+if (betaForm) {
+    betaForm.addEventListener('submit', function(e) {
+        const nome = document.getElementById('beta-name').value.trim();
+        const plataforma = document.getElementById('beta-platform').value;
+        const submitBtn = document.querySelector('.beta-submit');
+            if (!nome.includes(' ') || nome.split(' ').filter(n => n).length < 2) {
+                alert('Por favor, insira seu nome completo (Nome e Sobrenome).');
+                 e.preventDefault();
+                return;
+        }
+            if (plataforma === "") {
+                alert('Por favor, selecione uma plataforma para teste.');
+                e.preventDefault();
+                return;
+        }
+        submitBtn.innerText = "Enviando...";
+        submitBtn.style.opacity = "0.7";
+    });
+}

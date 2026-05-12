@@ -556,6 +556,7 @@ main {
     padding: 20px 0;
     max-width: 1200px;
     margin: 0 auto;
+    justify-content: center;
 }
 
 .card {
@@ -587,6 +588,31 @@ main {
     border-top-color: var(--low-impact);
 }
 
+.card-cartilha{
+    grid-column: 2;
+}
+
+.cartilha-section {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.cartilha-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding-bottom: 50px;
+}
+
+.card-cartilha {
+    max-width: 450px;
+    width: 100%;
+}
+
+.section-divider {
+    border: 0;
+    border-top: none; 
+}
 .badge {
     display: inline-block;
     font-size: 0.7rem;
