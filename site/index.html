@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Da Faculdade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="logo-link" href="#">
+                <h1 class="logo">HabHub</h1>
+            </a>
+            <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="nav-actions">
+                <ul class="nav-links" id="primary-menu">
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#priorities">Prioridades de Mudança</a></li>
+                    <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                    <li><a href="#presentation">Impacto sustentável</a></li>
+                    <!-- <li><a href="pages/blog.html">Blog</a></li> -->
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <img src="img/mulher_zen_2.jpg" alt="Mulher Zen">
+            <h2>Transforme Seus Hábitos</h2>
+            <p>Construa uma vida melhor, um hábito por vez</p>
+        </section>
+        <section id="sobre" class="pillars">
+            <div class="section-header">
+                <h2>Pilares de Saúde</h2>
+                <p>Desenvolvemos uma abordagem baseada em 5 pilares fundamentais</p>
+            </div>
+            <div class="carousel-container">
+                <button class="carousel-nav-btn carousel-nav-prev" aria-label="Pilar anterior"> &#10094 </button>
+
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <article class="carousel-card">
+                            <div class="card-icon">
+                                <img src="img/gif_mundo.png" alt="icon terra">
+                            </div>
+                            <h3>Ecologia</h3>
+                            <p>A maior barreira para a mudança não é a falta de consciência, mas a resistência de um cérebro moldado pela conveniência.</p>
+                        </article>
+                        <article class="carousel-card">
+                            <div class="card-icon">
+                                <img src="img/gif_mente.png" alt="icon mente">
+                            </div>
+                            <h3>Mental</h3>
+                            <p>A verdadeira maestria não está em controlar o mundo ao seu redor, mas em arquitetar o silêncio interior para que a sua próxima ação seja fruto da escolha.</p>
+                        </article>
+                        <article class="carousel-card">
+                            <div class="card-icon">
+                                <img src="img/gif_forte.png" alt="icon físico">
+                            </div>
+                            <h3>Físico</h3>
+                            <p>Seu hábito mais poderoso não é o que você faz quando está motivado, mas o que você executa no automático quando a vontade falha.</p>
+                        </article>
+                        <article class="carousel-card">
+                            <div class="card-icon">
+                                <img src="img/gif_salada.png" alt="icon salada">
+                            </div>
+                            <h3>Nutricional</h3>
+                            <p>Sua vitalidade não nasce do que você consome ocasionalmente, mas da disciplina inabalável de nutrir o seu potencial todos os dias.</p>
+                        </article>
+                        <article class="carousel-card">
+                            <div class="card-icon">
+                                <img src="img/gif_sono.png" alt="icon sono">
+                            </div>
+                            <h3>Descanso</h3>
+                            <p>O descanso não é uma interrupção da sua produtividade, mas a engenharia da sua potência.</p>
+                        </article>
+                    </div>
+                </div>
+
+                <button class="carousel-nav-btn carousel-nav-next" aria-label="Próximo pilar">&#10095</button>
+            </div>
+        </section>
+        <section id="priorities">
+            <div class="priorities-section">
+                <div class="section-header-divider">
+                    <span class="upper-detail">Metodologia HabHub</span>
+                    <h2>Prioridades de Mudança</h2>
+                    <p>Ações organizadas do maior para o menor impacto sistêmico.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <article class="card high">
+                    <span class="badge high">Alto Impacto</span>
+                    <h3>Mobilidade Ativa</h3>
+                    <p>Reduzir o uso do carro e priorizar transporte público, bicicleta ou caminhada. Evite voos de longa distância.</p>
+                    <div class="health-box">
+                        <strong> Benefício Saúde:</strong>
+                        Melhora a condição cardiovascular, reduz o stress e combate o sedentarismo.
+                    </div>
+                </article>
+                <article class="card high">
+                    <span class="badge high">Alto Impacto</span>
+                    <h3>Dieta Planetária</h3>
+                    <p>Reduzir significativamente o consumo de carne bovina e preferir alimentos locais e sazonais.</p>
+                    <div class="health-box">
+                        <strong> Benefício Saúde:</strong>
+                        Reduz riscos de doenças cardíacas e promove uma alimentação rica em nutrientes.
+                    </div>
+                </article>
+                <article class="card med">
+                    <span class="badge med">Médio Impacto</span>
+                    <h3>Eficiência no Lar</h3>
+                    <p>Melhorar o isolamento térmico, usar lâmpadas LED e aparelhos com alta eficiência energética.</p>
+                    <div class="health-box">
+                        <strong> Benefício Saúde:</strong>
+                        Melhora o conforto térmico e a qualidade do descanso em casa.
+                    </div>
+                </article>
+                <article class="card med">
+                    <span class="badge med">Médio Impacto</span>
+                    <h3>Consumo Consciente</h3>
+                    <p>Reparar itens em vez de substituir, evitar o "fast fashion" e comprar produtos de longa vida útil.</p>
+                    <div class="health-box">
+                        <strong> Benefício Saúde:</strong>
+                        Prática do minimalismo ajuda a reduzir a ansiedade e o stress financeiro.
+                    </div>
+                </article>
+                <article class="card low">
+                    <span class="badge low">Impacto Diário</span>
+                    <h3>Gestão de Resíduos</h3>
+                    <p>Compostagem de orgânicos, redução de embalagens plásticas e separação correta para reciclagem.</p>
+                    <div class="health-box">
+                        <strong>Benefício Saúde:</strong>
+                        Estimula o contacto com ciclos naturais e reduz o desperdício doméstico.
+                    </div>
+                </article>
+                <article class="card low">
+                    <span class="badge low">Impacto Diário</span>
+                    <h3>Higiene e Digital</h3>
+                    <p>Reduzir o tempo de banho, usar produtos de limpeza ecológicos e diminuir o tempo de ecrã.</p>
+                    <div class="health-box">
+                        <strong>Benefício Saúde:</strong>
+                        Melhora a saúde da pele e a higiene do sono (menos luz azul).
+                    </div>
+                </article>
+        </section>
+        </section>
+        <section id="sustentabilidade" class="sustainability">
+            <div class="sustainability-content">
+                <span class="sustainability-label">SUSTENTABILIDADE COMPORTAMENTAL</span>
+                <h2>O ambiente define o hábito, o hábito redefine o meio</h2>
+                <p>A mudança não depende de motivação, mas de organizar o ambiente para eliminar a decisão. Ao simplificar o comportamento, você torna a ação automática e evita o alto custo de escolha.</p>
+                <div class="sustainability-actions">
+                    <article>
+                        <h3>Comportamento Simples</h3>
+                        <p>Crie contextos onde a ação seja fácil e repetível. Reduzir a resistência do meio é o segredo para manter o hábito sem esforço.</p>
+                    </article>
+                    <article>
+                        <h3>Ambiente Favorável</h3>
+                        <p>Organize o espaço ao seu redor para que ele induza à escolha certa. Um meio bem estruturado substitui a necessidade de força de vontade.</p>
+                    </article>
+                    <article>
+                        <h3>Benefício Percebido</h3>
+                        <p>Foque na consequência positiva e imediata. Quando o ganho é claro, o novo comportamento se torna naturalmente mais atrativo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="presentation" class="presentation-area">
+            <div class="presenter-header">
+                <span class="brown">impacto sustentável HabHub </span>
+                <h2 class="display-title">Sustentabilidade não é sobre perfeição, é sobre <strong>Intenção</strong>. </h2>
+            </div>
+            <div class="manifesto-wrapper">
+                <div class="manifesto-line">
+                    <span class="dot"></span>
+                    <p>Cada escolha que fazemos reverbera em uma cadeia complexa de eventos.</p>
+                </div>
+                <div class="manifesto-line">
+                    <span class="dot"></span>
+                    <p>Nossa proposta com o <strong>HabHub</strong> é simplificar essa jornada.</p>
+                </div>
+                <div class="manifesto-line">
+                    <span class="dot"></span>
+                    <p>Trazemos clareza sobre onde sua energia gera mais resultado.</p>
+                </div>
+            </div>
+        </section>
+        <hr class="section-divider"> <div class="cartilha-section">
+            <div class="section-header-divider">
+                <span class="upper-detail">Conteúdo Extra</span>
+                <h2>Material Complementar</h2>
+                <p>Explore o conteúdo detalhado do projeto HabHub.</p>
+            </div>
+            <div class="cartilha-container">
+                <article class="card low card-cartilha">
+                    <span class="badge low">PDF Informativo</span>
+                    <h3>Cartilha Digital</h3>
+                    <p>Acesse o material completo para entender todos os detalhes sobre este projeto.</p>
+                    <div class="health-box">
+                        <strong>Acesse o material da nossa cartilha:</strong>
+                        <a href="./docs/CARTILHA versão final- Conexões Saudáveis.pdf" target="_blank">Cartilha Digital</a>                 
+                    </div>
+                </article>
+                </div>
+            </div>
+        <section id="contato" class="beta-signup">
+            <div class="beta-content">
+                <div class="beta-info">
+                    <span class="beta-label">Testes beta</span>
+                    <h2>Teste o HabHub antes do lançamento</h2>
+                    <p>Cadastre-se para participar dos primeiros testes e ajudar a melhorar a experiência do aplicativo.</p>
+                    <ul class="beta-benefits">
+                        <li>Acesso antecipado ao app</li>
+                        <li>Convites enviados por e-mail</li>
+                        <li>Feedback direto para evolução do produto</li>
+                    </ul>
+                </div>
+                <form class="beta-form" action="https://formsubmit.co/ricardobandeliauskas@gmail.com" method="POST">
+                    <input type="hidden" name="_subject" value="Novo cadastro de beta tester - HabHub">
+                    <input type="hidden" name="_template" value="table">
+                    <input class="honeypot" type="text" name="_honey" tabindex="-1" autocomplete="off">
+                    <div class="form-group">
+                        <label for="beta-name">Nome completo</label>
+                        <input id="beta-name" type="text" name="nome" placeholder="Seu nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="beta-email">E-mail</label>
+                        <input id="beta-email" type="email" name="email" placeholder="voce@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="beta-platform">Onde quer testar?</label>
+                        <select id="beta-platform" name="plataforma" required>
+                            <option value="">Selecione uma opção</option>
+                            <option value="Android">Android</option>
+                            <option value="iOS">iOS</option>
+                            <option value="Web">Web</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="beta-message">Por que você quer testar?</label>
+                        <textarea id="beta-message" name="mensagem" rows="4" placeholder="Conte rapidamente seu interesse"></textarea>
+                    </div>
+                    <label class="form-consent">
+                        <input type="checkbox" name="aceite_contato" required>
+                        Aceito receber contato sobre o beta do HabHub.
+                    </label>
+                    <button class="beta-submit" type="submit">Quero participar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 HabHub. Construindo hábitos, transformando vidas.</p>
+    </footer>
+    <script src="./js/ibelive.js"></script>
+</body>
+</html>
